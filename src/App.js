@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Buscador from './Component/Buscador';
+import Lista from './Component/Lista';
+import Datos from './Component/Datos';
+import React,{useState} from 'react';
+import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
+import MostrarPeople from './Component/MostrarPeople';
 
 function App() {
+
+  const [url,setUrl] = useState("");
+  const [datos,setDatos] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Switch>
+        <Route exact path="/">
+            <div className='formulario'>
+              <Lista setUrl={setUrl}/>
+              <Buscador setDatos={setDatos} url={url}/>
+            </div>
+            
+            <Datos datos={datos}/>
+        </Route>
+        <Route exact path="/:id" render={(routeProps) => <MostrarPeople {...routeProps} />} />
+    </Switch>
+    </BrowserRouter>
   );
 }
 

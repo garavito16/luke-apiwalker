@@ -1,0 +1,15 @@
+
+.botoncito {
+    padding: 0.5em 1.0em;
+    background-color: green;
+    border-radius: 1.0em;
+    margin-top: 1.0em;
+}
+
+.divInput {
+    margin-top: 1.0em;
+}
+
+.error {
+    color: red;
+}

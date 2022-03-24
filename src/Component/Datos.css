@@ -1,0 +1,17 @@
+
+.datos {
+    text-align: center;
+    border: 2px solid black;
+    width: 400px;
+    margin: auto;
+    margin-top: 3.0em;
+}
+
+.mensajito {
+    color: red;
+    font-size: 1.2em;
+}
+
+.imagen {
+    width: 350px;
+}
